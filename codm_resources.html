@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b120e">
+<title>CODM Resources | Player Hub</title>
+<style>
+:root{--bg:#090e0b;--panel:#111a14;--panel2:#17231a;--line:#29392d;--green:#9cff65;--muted:#a6b4a8;--white:#f4f8f2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1b2c20 0,#090e0b 55%);color:var(--white);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+header{padding:24px max(18px,calc((100% - 1120px)/2));border-bottom:1px solid var(--line);background:#090e0beF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border:1px solid #638e4d;border-radius:12px;display:grid;place-items:center;color:var(--green);font-weight:900;font-size:20px;box-shadow:0 0 24px #9cff6520}
+.brand strong{letter-spacing:1.5px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:2px}
+main{max-width:1120px;margin:auto;padding:24px 18px 60px}
+.hero{padding:34px 26px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(115deg,#1b2b20,#101711 65%,#17251b);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #9cff6522;border-radius:50%;right:-75px;top:-100px;box-shadow:0 0 0 30px #9cff6508,0 0 0 60px #9cff6505}
+.eyebrow{color:var(--green);font-weight:800;letter-spacing:2px;font-size:11px}.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.02;margin:12px 0;max-width:650px}.hero p{color:#c0cdbf;max-width:570px;margin:0}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{border:1px solid #456448;color:#d7e8d2;padding:6px 10px;border-radius:99px;font-size:12px}
+.tabs{display:flex;gap:8px;overflow:auto;padding:18px 0 12px;position:sticky;top:88px;background:#090e0beF;z-index:4}
+.tab{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.tab.active{background:#243a27;border-color:#79b95b;color:var(--green)}
+.panel{display:none}.panel.active{display:block}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:18px 0}.section-head h2{margin:0;font-size:23px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:17px;min-width:0}
+.card h3{margin:0 0 5px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px}
+.tag{display:inline-block;color:var(--green);background:#9cff6512;border:1px solid #9cff6533;border-radius:6px;padding:3px 7px;font-size:10px;font-weight:800;letter-spacing:.7px;margin-bottom:10px}
+input,select,textarea{width:100%;background:#0a110c;border:1px solid var(--line);color:var(--white);border-radius:9px;padding:11px;font:inherit;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}label{display:block;color:#c8d4c8;font-size:12px;font-weight:700;margin:12px 0 6px}
+button{font:inherit}.btn{border:0;border-radius:9px;background:var(--green);color:#10200d;padding:10px 14px;font-weight:900;cursor:pointer}.btn.secondary{background:#26362a;color:var(--white);border:1px solid var(--line)}.btn.danger{background:#3a2525;color:#ffb9b9;border:1px solid #754141}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:#0b130d;border:1px solid var(--line);padding:13px;border-radius:12px}.stat b{display:block;color:var(--green);font-size:23px}.stat span{font-size:11px;color:var(--muted)}
+.range-row{display:grid;grid-template-columns:1fr 76px;gap:12px;align-items:center}.range-row input{padding:0;accent-color:var(--green)}
+.note{border-left:3px solid var(--green);padding:10px 13px;background:#9cff650d;color:#c6d4c4;border-radius:0 9px 9px 0;font-size:12px;margin-top:14px}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}td,th{text-align:left;padding:11px;border-bottom:1px solid var(--line)}th{color:var(--green)}
+footer{border-top:1px solid var(--line);padding:22px 18px;text-align:center;color:var(--muted);font-size:12px}
+.empty{color:var(--muted);font-size:13px;padding:18px;text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat-grid{grid-template-columns:repeat(2,1fr)}.tabs{top:82px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding:26px 19px}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">C</div><div><strong>CODM RESOURCES</strong><small>PLAYER HUB • COMMUNITY TOOLKIT</small></div></div></header>
+<main>
+<section class="hero">
+<div class="eyebrow">CALL OF DUTY: MOBILE COMPANION</div>
+<h1>PLAY SMARTER.<br><span style="color:var(--green)">RANK UP.</span></h1>
+<p>Your quick-reference hub for maps, game modes, personal match stats, HUD planning and sensitivity notes.</p>
+<div class="pills"><span class="pill">MAP GUIDES</span><span class="pill">GAME MODES</span><span class="pill">PLAYER TRACKER</span><span class="pill">SETTINGS LAB</span></div>
+</section>
+<nav class="tabs" aria-label="Sections">
+<button class="tab active" data-tab="maps">Maps</button><button class="tab" data-tab="modes">Game modes</button><button class="tab" data-tab="stats">Player stats</button><button class="tab" data-tab="hud">HUD planner</button><button class="tab" data-tab="sensitivity">Sensitivity</button>
+</nav>
+
+<section id="maps" class="panel active">
+<div class="section-head"><div><h2>Map quick guide</h2><p>Choose a map to see a short play-style reminder.</p></div><select id="mapFilter" style="max-width:180px"><option value="all">All maps</option><option>Multiplayer</option><option>Battle Royale</option></select></div>
+<div class="grid" id="mapCards">
+<article class="card" data-type="Multiplayer"><span class="tag">MULTIPLAYER</span><h3>Nuketown</h3><p>Compact lanes and fast engagements. Watch the central street and both house entrances.</p></article>
+<article class="card" data-type="Multiplayer"><span class="tag">MULTIPLAYER</span><h3>Crash</h3><p>Use cover around the central helicopter area and be aware of long sightlines.</p></article>
+<article class="card" data-type="Multiplayer"><span class="tag">MULTIPLAYER</span><h3>Raid</h3><p>Learn the pool, courtyard and garage routes. Rotate early when objectives move.</p></article>
+<article class="card" data-type="Multiplayer"><span class="tag">MULTIPLAYER</span><h3>Standoff</h3><p>A three-lane layout with open crossings. Check windows and mid before rotating.</p></article>
+<article class="card" data-type="Battle Royale"><span class="tag">BATTLE ROYALE</span><h3>Isolated</h3><p>Plan rotations around the safe zone and use terrain and buildings for cover.</p></article>
+<article class="card" data-type="Battle Royale"><span class="tag">BATTLE ROYALE</span><h3>Blackout</h3><p>Keep track of the circle, vehicle routes and available cover between locations.</p></article>
+</div>
+<div class="note">Map pools and availability can change with seasons and playlists. Check the in-game map list for the current rotation.</div>
+</section>
+
+<section id="modes" class="panel">
+<div class="section-head"><div><h2>Game modes</h2><p>Quick explanations and useful focus points.</p></div></div>
+<div class="grid">
+<article class="card"><span class="tag">OBJECTIVE</span><h3>Hardpoint</h3><p>Control the active zone, rotate before it changes and support teammates instead of chasing eliminations.</p></article>
+<article class="card"><span class="tag">OBJECTIVE</span><h3>Domination</h3><p>Capture and hold objectives. Coordinate control of two flags and avoid overextending.</p></article>
+<article class="card"><span class="tag">ROUND-BASED</span><h3>Search & Destroy</h3><p>One life per round. Communicate, play patiently and keep track of the objective.</p></article>
+<article class="card"><span class="tag">ELIMINATION</span><h3>Team Deathmatch</h3><p>Work with your team, use cover and avoid giving the other side easy repeat encounters.</p></article>
+<article class="card"><span class="tag">ELIMINATION</span><h3>Frontline</h3><p>Teams respawn at set bases. Use safe routes out of spawn and stay aware of lane pressure.</p></article>
+<article class="card"><span class="tag">BATTLE ROYALE</span><h3>BR Classic</h3><p>Loot, choose a sensible rotation, manage resources and adapt to the safe zone.</p></article>
+</div>
+</section>
+
+<section id="stats" class="panel">
+<div class="section-head"><div><h2>Player stats tracker</h2><p>Log your own matches on this device.</p></div></div>
+<div class="card">
+<div class="grid">
+<div><label for="matchMode">Mode</label><select id="matchMode"><option>Ranked MP</option><option>BR</option><option>Public MP</option></select></div>
+<div><label for="kills">Kills</label><input id="kills" type="number" min="0" value="0"></div>
+<div><label for="deaths">Deaths</label><input id="deaths" type="number" min="0" value="0"></div>
+</div>
+<div class="actions"><button class="btn" id="addMatch">Add match</button><button class="btn secondary" id="clearStats">Clear history</button></div>
+<div class="stat-grid"><div class="stat"><b id="totalMatches">0</b><span>MATCHES</span></div><div class="stat"><b id="totalKills">0</b><span>KILLS</span></div><div class="stat"><b id="totalDeaths">0</b><span>DEATHS</span></div><div class="stat"><b id="kd">0.00</b><span>K/D RATIO</span></div></div>
+<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Kills</th><th>Deaths</th><th>Date</th></tr></thead><tbody id="matchRows"><tr><td colspan="4" class="empty">No matches logged yet.</td></tr></tbody></table></div>
+<div class="note">Your match log is saved in this browser on this device. It is not uploaded or shared.</div>
+</div>
+</section>
+
+<section id="hud" class="panel">
+<div class="section-head"><div><h2>HUD planner</h2><p>Plan your control layout before changing it in-game.</p></div></div>
+<div class="grid">
+<div class="card"><span class="tag">LAYOUT NOTES</span><h3>Control placement</h3>
+<label for="playStyle">Play style</label><select id="playStyle"><option>Two-finger</option><option>Three-finger</option><option>Four-finger</option><option>Custom</option></select>
+<label for="hudNotes">My HUD notes</label><textarea id="hudNotes" rows="5" placeholder="Example: keep fire and aim controls easy to reach..."></textarea>
+<button class="btn" id="saveHud" style="margin-top:12px">Save HUD notes</button>
+</div>
+<div class="card"><span class="tag">PRACTICAL CHECKLIST</span><h3>Before a match</h3>
+<p><label><input type="checkbox" class="check" style="width:auto"> Buttons are easy to reach</label></p>
+<p><label><input type="checkbox" class="check" style="width:auto"> Important buttons do not overlap</label></p>
+<p><label><input type="checkbox" class="check" style="width:auto"> Test layout in training mode</label></p>
+<p><label><input type="checkbox" class="check" style="width:auto"> Adjust button size for comfort</label></p>
+</div>
+</div>
+<div class="note">This planner stores your notes only. Make and test actual button changes in CODM's Controls settings.</div>
+</section>
+
+<section id="sensitivity" class="panel">
+<div class="section-head"><div><h2>Sensitivity settings lab</h2><p>Record and compare your own settings. There is no universal best sensitivity.</p></div></div>
+<div class="grid">
+<div class="card"><span class="tag">MP SETTINGS</span><h3>Camera sensitivity</h3><div id="cameraControls"></div></div>
+<div class="card"><span class="tag">MP SETTINGS</span><h3>Firing sensitivity</h3><div id="firingControls"></div></div>
+<div class="card"><span class="tag">BR SETTINGS</span><h3>BR camera sensitivity</h3><div id="brControls"></div></div>
+</div>
+<div class="actions"><button class="btn" id="saveSens">Save my settings</button><button class="btn secondary" id="resetSens">Reset sliders</button></div>
+<div class="note">Use these sliders as a personal notebook, not as official or guaranteed pro settings. Test changes gradually in the training range and keep settings that feel controlled and consistent.</div>
+</section>
+</main>
+<footer>CODM RESOURCES • Unofficial fan-made companion. Not affiliated with or endorsed by Activision or Call of Duty: Mobile.</footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));}));
+document.getElementById('mapFilter').addEventListener('change',e=>document.querySelectorAll('#mapCards .card').forEach(c=>c.style.display=e.target.value==='all'||c.dataset.type===e.target.value?'':'none'));
+const readMatches=()=>{try{return JSON.parse(localStorage.getItem('codmMatches')||'[]')}catch{return[]}};
+function renderMatches(){let a=readMatches(),k=a.reduce((s,x)=>s+x.k,0),d=a.reduce((s,x)=>s+x.d,0);document.getElementById('totalMatches').textContent=a.length;document.getElementById('totalKills').textContent=k;document.getElementById('totalDeaths').textContent=d;document.getElementById('kd').textContent=(d?k/d:k).toFixed(2);document.getElementById('matchRows').innerHTML=a.length?a.slice().reverse().map(x=>`<tr><td>${x.mode}</td><td>${x.k}</td><td>${x.d}</td><td>${x.date}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">No matches logged yet.</td></tr>'}
+document.getElementById('addMatch').onclick=()=>{let k=Math.max(0,Number(document.getElementById('kills').value)||0),d=Math.max(0,Number(document.getElementById('deaths').value)||0),a=readMatches();a.push({mode:document.getElementById('matchMode').value,k,d,date:new Date().toLocaleDateString()});localStorage.setItem('codmMatches',JSON.stringify(a));renderMatches()};
+document.getElementById('clearStats').onclick=()=>{if(confirm('Delete all saved match history on this device?')){localStorage.removeItem('codmMatches');renderMatches()}};
+const groups={cameraControls:['Standard','ADS','Tactical Scope','Sniper Scope'],firingControls:['Standard','ADS','Tactical Scope','Sniper Scope'],brControls:['TPP Camera','FPP Camera','Optics','Sniper Scope']};
+for(const [id,names] of Object.entries(groups)){let root=document.getElementById(id);names.forEach((n,i)=>{let key=id+'_'+i;root.insertAdjacentHTML('beforeend',`<label>${n}</label><div class="range-row"><input type="range" min="1" max="300" value="100" id="${key}"><input type="number" min="1" max="300" value="100" id="${key}n" aria-label="${n} value"></div>`);let r=document.getElementById(key),v=document.getElementById(key+'n');r.oninput=()=>v.value=r.value;v.oninput=()=>r.value=Math.min(300,Math.max(1,v.value||1));});}
+document.getElementById('saveSens').onclick=()=>{let o={};Object.keys(groups).forEach(id=>groups[id].forEach((_,i)=>o[id+'_'+i]=document.getElementById(id+'_'+i).value));localStorage.setItem('codmSens',JSON.stringify(o));alert('Sensitivity notes saved on this device.')};
+document.getElementById('resetSens').onclick=()=>{document.querySelectorAll('#sensitivity input[type=range]').forEach(x=>{x.value=100;document.getElementById(x.id+'n').value=100})};
+document.getElementById('saveHud').onclick=()=>{localStorage.setItem('codmHud',JSON.stringify({style:document.getElementById('playStyle').value,notes:document.getElementById('hudNotes').value}));alert('HUD notes saved on this device.')};
+try{let h=JSON.parse(localStorage.getItem('codmHud')||'null');if(h){document.getElementById('playStyle').value=h.style;document.getElementById('hudNotes').value=h.notes}}catch{}
+try{let s=JSON.parse(localStorage.getItem('codmSens')||'null');if(s)Object.entries(s).forEach(([k,v])=>{let el=document.getElementById(k);if(el){el.value=v;document.getElementById(k+'n').value=v}})}catch{}
+renderMatches();
+</script>
+</body></html>
